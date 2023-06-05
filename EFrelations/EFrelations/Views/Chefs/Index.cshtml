@@ -9,29 +9,30 @@
           <p>Our <span>Proffesional</span> Chefs</p>
         </div>
 
-        <div class="row gy-4">
+        <div class="d-flex justify-content-between">
 
             @foreach (var chef in Model)
             {
                   <a asp-controller="Chefs" asp-action="Details" asp-route-id="@chef.Id">
-                          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                        <div class="chef-member">
-                          <div class="member-img">
+                    <div class="chef-member col-lg-3">
+                        <div class="member-img">
                             <img src="~/assets/img/chefs/@chef.Image" class="img-fluid" alt="">
                             <div class="social">
-                                  <a href=""><i class="bi bi-twitter"></i></a>
-                                  <a href=""><i class="bi bi-facebook"></i></a>
-                                  <a href=""><i class="bi bi-instagram"></i></a>
-                                  <a href=""><i class="bi bi-linkedin"></i></a>
+                                <!-- a tag-i icinde a tag-i oldugu ucun uzerine click edende details sehifesini acmir, 
+                                amma inspectde a href elave edir. Eger social divini butovlukde silsem onda hecbir problem olmuyacaq,
+                                details sehifesine yonlendirecek. Sadece dizaynda ferq olacaq.-->
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
                             </div>
-                          </div>
-                          <div class="member-info">
+                        </div>
+                        <div class="member-info">
                             <h4>@chef.Name</h4>
                             <span>@chef.Profession.Name</span>
                             <p>@chef.About</p>
-                          </div>
                         </div>
-                      </div>
+                    </div>
 
                             <!-- End Chefs Member -->
                   </a>
